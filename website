@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MissAstro Website</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #001f3f, #003366);
+      text-align: center;
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+      color: #F4C2C2;
+    }
+
+    header {
+      padding: 40px 0;
+      font-size: 36px;
+      font-weight: bold;
+      color: #b3e5fc;
+    }
+
+    .content {
+      margin-top: 30px;
+      font-size: 22px;
+      min-height: 150px;
+      padding: 20px;
+      color: #F4C2C2;
+      text-shadow: 1px 1px 2px #000000; /* Enhances readability */
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0288d1;
+      color: #F4C2C2;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: #0277bd;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 14px;
+      color: #90caf9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🌟 MissAstro Website 🌟</header>
+
+  <div class="content" id="displayText">
+    Welcome to MissAstro! Click a button below to discover more. 🚀
+  </div>
+
+  <div class="buttons">
+    <button onclick="showText('stars')">✨ About the Stars</button>
+    <button onclick="showText('missastro')">👩‍🚀 About MissAstro</button>
+    <button onclick="showText('space')">🌌 Fun Fact About Space</button>
+  </div>
+
+  <footer>
+    &copy; 2025 MissAstro Universe. All rights reserved.
+  </footer>
+
+  <script>
+    function showText(option) {
+      const textBox = document.getElementById("displayText");
+      textBox.style.color = "#F4C2C2"; // keep baby pink
+      textBox.style.textShadow = "1px 1px 2px #000"; // ensures clarity
+
+      if (option === "stars") {
+        textBox.innerHTML = `
+          ⭐ Stars are not just pretty lights in the sky — they are massive, luminous spheres of plasma held together by gravity.<br><br>
+          Most stars are primarily made of hydrogen and helium. Through nuclear fusion, they produce the light and heat we see from Earth.<br>
+          Some stars live for billions of years, while others burn out in brilliant supernova explosions.
+        `;
+      } else if (option === "missastro") {
+        textBox.innerHTML = `
+          👩‍🚀 Meet MissAstro — a bold explorer with a telescope in one hand and curiosity in the other.<br><br>
+          She's passionate about discovering galaxies, chasing comets, and learning everything about the universe. <br>
+          Whether it's black holes, dark matter, or alien life, MissAstro is ready to boldly go where no mind has gone before!
+        `;
+      } else if (option === "space") {
+        textBox.innerHTML = `
+          🌌 Did you know?<br><br>
+          Space is completely silent because sound needs a medium like air to travel, and space is a vacuum.<br>
+          Also, one day on Venus is longer than its year, and if you could fly a plane to Pluto, it would take you over 800 years to get there!
+        `;
+      }
+    }
+  </script>
+
+</body>
+</html>
