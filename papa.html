@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>عيد ميلاد سعيد يا أبي</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Tahoma', sans-serif;
+      background-color: #ffffff; /* white background */
+      color: #1a1a1a; /* dark readable text */
+      text-align: center;
+      direction: rtl;
+    }
+
+    header {
+      padding: 40px 20px;
+      font-size: 34px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: #34495e;
+      margin-bottom: 30px;
+    }
+
+    .content {
+      font-size: 22px;
+      min-height: 100px;
+      padding: 20px;
+      color: #1a1a1a;
+      direction: rtl; /* Ensure text is right to left in this section */
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .buttons button {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      background-color: #2c3e50; /* dark button */
+      color: #ffffff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: #1a252f;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🎉 عيد ميلاد سعيد يا أبي 🎉</header>
+  <div class="subtitle">  نهديك كلمات من القلب في هذا اليوم المبارك ❤️</div>
+
+  <div class="content" id="displayText">
+    اضغط على الزر لرؤية رسالة خاصة لك 💌
+  </div>
+
+  <div class="buttons">
+    <button onclick="showText('doctor')">🩺 الطبيب </button>
+    <button onclick="showText('scientist')">🔬 العالِم المُلهم</button>
+    <button onclick="showText('father')">👨‍👧‍👦 الأب العظيم</button>
+    <button onclick="showText('faith')">🕌 الرجل المؤمن</button>
+  </div>
+
+  <footer>&copy; 2025 عائلتك التي تحبك كثيرًا 💖</footer>
+
+  <script>
+    const textBox = document.getElementById("displayText");
+    const clickedButtons = new Set();  // Track clicked buttons
+
+    function showText(option) {
+        let message = "";
+        textBox.innerHTML = ""; // Clear text before showing new message
+
+        if (option === "doctor") {
+          message = "لقد شفيت الأرواح قبل الأجساد، ومارست مهنتك بشرف ورحمة. نحن فخورون بك يا طبيبنا.";
+        } else if (option === "scientist") {
+          message = "حبك للفيزياء والعلم أضاء لنا الطريق وألهم عقولنا. شكراً لأنك جعلتنا نحب العلم.";
+        } else if (option === "father") {
+          message = "بحنانك وتوجيهك، ربيتَ تسعة أبناء وبنات على الأخلاق والعلم. أنت الأب المثالي في أعيننا جميعًا.";
+        } else if (option === "faith") {
+          message = "في كل موقف، كنت مثالاً للمؤمن الصادق. دعاؤك، صبرك، وخوفك من الله غرس فينا حب الدين.";
+        }
+
+        // Show the message after clearing
+        textBox.innerHTML = message;
+
+        // Track which buttons have been clicked
+        clickedButtons.add(option);
+
+        // After all buttons clicked, show the new button to click for duaa
+        if (clickedButtons.size === 4) {
+          setTimeout(() => showDuaaButton(), 2000);  // Delay before showing duaa button
+        }
+    }
+
+    function showDuaaButton() {
+      const buttonsContainer = document.querySelector('.buttons');
+      buttonsContainer.innerHTML = '<button onclick="showDuaa()">اضغط هنا للدعاء</button>';
+    }
+
+    function showDuaa() {
+      const duaa = "اللهم احفظ والدنا، وبارك له في عمره، واغفر ذنوبه، وارضَ عنه، واجمعنا به في جنتك يا أرحم الراحمين 🤲";
+      textBox.innerHTML = duaa;  // Show the duaa directly
+    }
+  </script>
+
+</body>
+</html>
+
